@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UsuarioRepository")
- * @UniqueEntity("email", message="Esse e-mail já está em uso.")
+ * @UniqueEntity("email", message="Esse e-mail jÃ¡ estÃ¡ em uso.")
  */
 class Usuario implements UserInterface
 {
@@ -23,14 +23,14 @@ class Usuario implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=50)
-     * @Assert\NotBlank(message="Campo Nome não pode ser vazio!")
+     * @Assert\NotBlank(message="Campo Nome nÃ£o pode ser vazio!")
      */
     private $nome;
 
     /**
      * @ORM\Column(type="string", length=100)
-     * @Assert\NotBlank(message="Campo E-mail não pode ser vazio!")
-     * @Assert\Email(message="Informe um e-mail válido")
+     * @Assert\NotBlank(message="Campo E-mail nÃ£o pode ser vazio!")
+     * @Assert\Email(message="Informe um e-mail vÃ¡lido")
      */
     private $email;
 
@@ -63,8 +63,7 @@ class Usuario implements UserInterface
     private $data_alteracao;
 
     /**
-     * @ORM\Column(type=json_array")
-     *
+     * @ORM\Column(type="json_array")
      */
     private $roles;
 
@@ -201,7 +200,7 @@ class Usuario implements UserInterface
      *
      * @return string The password
      */
-    public function getPassword()
+    public function getPassword() : string
     {
         return $this->senha;
     }
@@ -223,7 +222,7 @@ class Usuario implements UserInterface
      *
      * @return string The username
      */
-    public function getUsername()
+    public function getUsername() : string
     {
         return $this->email;
     }
