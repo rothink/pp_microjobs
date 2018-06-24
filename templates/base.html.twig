@@ -76,17 +76,17 @@
 
 <main role="main" class="pt-2">
     <div class="container">
-        {% for flasMessage in app.session.flashbag.get("success") %}
+        {% for flashMessage in app.session.flashbag.get("success") %}
             <div class="alert alert-success">
                 {{ flashMessage }}
             </div>
         {% endfor %}
-        {% for flasMessage in app.session.flashbag.get("warning") %}
+        {% for flashMessage in app.session.flashbag.get("warning") %}
             <div class="alert alert-warning">
                 {{ flashMessage }}
             </div>
         {% endfor %}
-        {% for flasMessage in app.session.flashbag.get("error") %}
+        {% for flashMessage in app.session.flashbag.get("error") %}
             <div class="alert alert-danger">
                 {{ flashMessage }}
             </div>
